@@ -1,4 +1,4 @@
-﻿USE Library
+USE Library
 -- 1
 SELECT P.Name
 FROM Books AS B
@@ -77,11 +77,11 @@ ON T.Id_Dep = D.Id
 WHERE D.Name LIKE N'Graphics and Designs'
 ORDER BY Work
 
--- 7
+-- 8
 SELECT L.Id , L.FirstName + ' ' + L.LastName AS Librarian, COUNT(*) AS BooksIssued
 FROM Libs AS L
-JOIN dbo.S_Cards AS SC 
+JOIN S_Cards AS SC 
 ON L.Id = SC.Id_Lib
-JOIN dbo.T_Cards AS TC 
+JOIN T_Cards AS TC 
 ON L.Id = TC.Id_Lib
 GROUP BY L.Id, L.FirstName, L.LastName
